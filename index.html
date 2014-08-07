@@ -1,0 +1,74 @@
+<html ng-app="stv">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/style-new.css">
+    <script type="text/javascript" src="./js/angular.js"></script>
+    <script src="./js/angular-ui.js" data-semver="0.4.0" data-require="angular-ui@*"></script>
+    <script type="text/javascript" src="./js/angular-modules.js"></script>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <!-- FONTS -->
+
+
+</head>
+
+<body ng-controller="servList">
+	<div id="edit-overlay" class="popup-bg"> <!-- ng-class="{'edit-show': !hide, 'edit-hide': hide }" --> 
+        <div id="edit-wrapper" class="popup-window">
+            <div id="edit-center-div">
+            <div id="edit-header">
+                <div id="edit-header-text" class="thin"><center>View/Edit Host Information</center></div>
+            </div>
+                <table id="edit-table">
+                    <tr>
+                        <th class="edit-th"></th>
+                    </tr>
+                    <tr>
+                        <td class="edit-th">IP Address</td>
+                        <td class="edit-td"><input name="editipaddr" type="text" class="txt" ng-model="editIpaddr" placeholder="IP Address" value={{$scope.$edit.ipaddr}}></td>
+                    </tr>
+                    <tr>
+                        <td class="edit-th">Hostname</td>
+                        <td class="edit-td"><input name="edithostname" ng-model="editHostname" type="text" class="txt" placeholder="Hostname" value="{{$edit.hostname}}"></td>
+                    </tr>
+                    <tr>
+                        <td class="edit-th">Subnet</td>
+                        <td class="edit-td"><input name="editsubnet" ng-model="editSubnet" type="text" class="txt" placeholder="Subnet" value="{{$edit.subnet}"></td>
+                    </tr>
+                    <tr>
+                        <td class="edit-th">VLAN</td>
+                        <td class="edit-td"><input name="vlan" ng-model="editVlan" type="text" class="txt" placeholder="VLAN" value="{{$edit.vlan}}"></td>
+                    </tr>
+                    <tr>
+                        <td class="edit-th">Location</td>
+                        <td class="edit-td"><input name="editlocation" ng-model="editLocation" type="text" class="txt" placeholder="Location" value="{{$edit.location}"></td>
+                    </tr>
+                    <tr>
+                        <td class="edit-th">Login</td>
+                        <td class="edit-td"><input name="editlogin" ng-model="editLogin" type="text" class="txt" placeholder="Login" value="{{$edit.login}}"></td>
+                    </tr>
+                    <tr>
+                        <td class="edit-th">Services</td>
+                        <td class="edit-td"><input name="editservices" ng-model="editServices" type="text" class="txt" placeholder="Services" value="{{$edit.services}}"></td>
+                    </tr>
+                    <tr>
+                        <td class="edit-th">Added by</td>
+                        <td class="edit-td"><input name="editaddedby" ng-model="editAddedby" type="text" class="txt" placeholder="Added By" value="{{$edit.addedby}}"></td>
+                    </tr>
+                    <tr>
+                        <td class="edit-th">Assigned to</td>
+                        <td class="edit-td"><select name="editassigned" ng-model="editAssigned" type="select" class="edit-text txt dropdown" placeholder="" value="{{$edit.assigned}}"></td>
+                    </tr>
+                    <tr>
+                        <td class="edit-th">Reserved</th>
+                        <td class="edit-td"><input name="editreserved" ng-model="editreserved" type="checkbox" class="add-check"></td>
+                    </tr>
+                </table>
+            <div id="edit-buttons">
+                <input type="submit" id="edit-button-save" class="btn" ng-click="saveEdit()" value="Save">
+                <input type="button" id="edit-button-canel" class="btn" ng-click="hide = !hide" value="Close"><br>
+            </div>
+            </div>
+            </div>
+            <div id="edit-bg"></div>
+        </div>
+    </div>
